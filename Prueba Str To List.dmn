@@ -186,7 +186,7 @@ A10BP069011,A10BR040011,A10BR040012,A10BT017011"</dmn:text>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="714" y="223" width="100" height="50"/>
+        <dc:Bounds x="715" y="298" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_84D15737-2990-4394-BAFF-8E0C9B41FE08-AUTO-TARGET" dmnElementRef="_84D15737-2990-4394-BAFF-8E0C9B41FE08">
