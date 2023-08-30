@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_4F8B9DC1-CEE8-49E0-A5F5-97B5F8BD99B5" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_AE76FDBD-26A7-41BA-A14F-D59B26807E90" name="Prueba Str To List" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_4F8B9DC1-CEE8-49E0-A5F5-97B5F8BD99B5">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_F1D500BB-7995-4137-8E59-B98FC1606F6F" name="lista_antecedentesMedicosDiagnosticos" isCollection="true">
+    <dmn:typeRef>string</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_A78D917E-8F97-431F-B486-26A1ADE0EE86" name="lista_Medicamentos" isCollection="true">
+    <dmn:typeRef>string</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:businessKnowledgeModel id="_C6C5C6AB-A63F-46AD-B1B5-04DFBB4C760A" name="antecedentesMedicosDiagnosticos">
+    <dmn:extensionElements/>
+    <dmn:variable id="_632A0171-693E-4638-9B85-61BE22B90ACF" name="antecedentesMedicosDiagnosticos" typeRef="string"/>
+    <dmn:encapsulatedLogic id="_116C58B7-FE67-4B2D-AA1A-34D3419AE254" kind="FEEL">
+      <dmn:literalExpression id="_70D73E80-F100-4B5A-AACA-E7260DE09403">
+        <dmn:text>"E100,E101,E102,E103,E104,E105,E106,E107,E108,E109,E110,E111,E112,E113,
+E114,E115,E116,E117,E118,E119,E120,E121,E122,E123,E124,E125,E126,E127,
+E128,E129,E130,E131,E132,E133,E134,E135,E136,E137,E138,E139,E140,E141,
+E142,E143,E144,E145,E146,E147,E148,E149"</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
+  <dmn:decision id="_BFE8699A-720C-409E-B40B-9ABC6060B903" name="Convertir a Lista_Antecedentes">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6BB70B55-A65E-4926-A386-FDCF011E4AEA" name="Convertir a Lista_Antecedentes" typeRef="lista_antecedentesMedicosDiagnosticos"/>
+    <dmn:knowledgeRequirement id="_84D15737-2990-4394-BAFF-8E0C9B41FE08">
+      <dmn:requiredKnowledge href="#_C6C5C6AB-A63F-46AD-B1B5-04DFBB4C760A"/>
+    </dmn:knowledgeRequirement>
+    <dmn:knowledgeRequirement id="_598652D2-D9F6-424B-BB68-CC2C0615677E">
+      <dmn:requiredKnowledge href="#_65649EAA-E5A7-455F-A29A-38F325A0AF1E"/>
+    </dmn:knowledgeRequirement>
+    <dmn:literalExpression id="_C845B76E-5BA7-4490-91AD-F5CDA4C1606B">
+      <dmn:text>Funcion_StringToLista(antecedentesMedicosDiagnosticos())</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:businessKnowledgeModel id="_E890B74C-A496-4652-97E2-4448420C2E66" name="medicamentos">
+    <dmn:extensionElements/>
+    <dmn:variable id="_8A119FF9-7A31-4ED4-AA5B-2555864E0DF2" name="medicamentos" typeRef="string"/>
+    <dmn:encapsulatedLogic id="_89A863D2-F673-4422-AEAD-1A11222F4D13" kind="FEEL">
+      <dmn:literalExpression id="_979D6D91-4BB6-4BD9-8937-6B810B0EB58A">
+        <dmn:text>"A10BM011013,A10BM011044,A10BM011041,A10BM011011,A10BM011201,A10BM011043,
+A10BM011042,A10BM011012,A16AB118991,1111,INS133,A16AB118993,INS481,INS138,
+INS136,A16AB118994,A16AB118994,INS140,54587000000,74501000000,A16AB118998,
+82133000000,82629000000,74502000000,A16AB118997,A10BX1431C02,A10BX1431C01,
+A10BE020703,A10BE020703,A10BX0731C02,A10BX0731C03,A10BL119701,A10BL121701,
+A10BL121702,A10BJ0631C01,A10BJ0631C02,A10BL117023,A10BL117021,A10BL117022,
+A10BL100021,A10BS136042,A10BS136041,A10BM152041,A10BD0714C01,A10BA0213C09,
+A10BS102012,A10BV072011,A10BV072013,A10BV072012,A10BM152012,A10BM15201,
+A10BM152011,A10BS126021,A10BS102011,A10BS071012,A10BS071013,
+A10BS071011,A10BV081011,A10AB05,A10AB05,A10AI028701,A10AI028701,A10AE5631C01,
+A10AE0631C01,A10AI113701,A10AI096701,A10AI096701,A10AL121702,A10AL121701,
+A10AE0431C02,A10AE0431C03,A10AE0431C01,A10AI073701,A10AI073704,A10AI073701,
+A10AI073701,A10AE0431C04,A10AI073702,A10AI073703,A10AB0631C03,A10AB0631C01,
+A10AB0631C02,A10AI054701,A10AI054701,A10AI109711,A10AI009711,A10AI109711,
+A10AI009711,A10AI009711,A10AI044701,A10AI043711,A10AI043711,A10AI044703,
+A10AI044702,A10AI055711,A10AI055712,A10AI055712,A10AI009711,A10AI009711,
+A10AI109711,A10AI109711,A10AI028701,A10AI096701,A10AI073711,A10AI073701,
+A10AI009711,A10AI008701,A10AI043711,A10AI044701,A10AI055711,A10BE134025,
+A10BE134023,A10BK021301,A10BK021382,A10BD1613,A10BD1613,A10BD1613,A10BD1613,
+A10BX091021,A10BD15,A10BD150000,A10BK01,A10BE134021,A10BE134022,A10BE134021,
+A10BE134022,A10BD2013C04,A10BD2013C01,A10BD20,A10BD2013C03,A10BG004011,
+A10BG028041,A10BG028042,A10BD0213C10,A10BM140011,A10BM140011,A10BD0213C05,
+A10BD0213C04,A10BM054024,A10BM054012,A10BM054013,A10BG033011,A10BG033012,
+A10BP069011,A10BR040011,A10BR040012,A10BT017011"</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
+  <dmn:businessKnowledgeModel id="_65649EAA-E5A7-455F-A29A-38F325A0AF1E" name="Funcion_StringToLista">
+    <dmn:extensionElements/>
+    <dmn:variable id="_120B3283-DD76-4CF6-B1D8-E97C15880393" name="Funcion_StringToLista" typeRef="Any"/>
+    <dmn:encapsulatedLogic id="_D8472A9C-7C22-45A1-B383-97A1653E9D23" kind="FEEL">
+      <dmn:formalParameter id="_5C02FE60-DC1D-4E1B-A2A3-B6F8B96FB799" name="texto" typeRef="string"/>
+      <dmn:literalExpression id="_0F99C046-FDF9-406F-BF59-A5CE2C48429C">
+        <dmn:text>split(texto,",")</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
+  <dmn:decision id="_71453444-43B8-4884-BB60-128DABC4A172" name="Convertir a Lista medicamentos">
+    <dmn:extensionElements/>
+    <dmn:variable id="_71CEAF5E-934B-4B03-9C2F-E420D2E63FDD" name="Convertir a Lista medicamentos" typeRef="lista_antecedentesMedicosDiagnosticos"/>
+    <dmn:knowledgeRequirement id="_6B56BB70-DC25-4F25-A364-D217CB86D7F0">
+      <dmn:requiredKnowledge href="#_65649EAA-E5A7-455F-A29A-38F325A0AF1E"/>
+    </dmn:knowledgeRequirement>
+    <dmn:knowledgeRequirement id="_3A41FFE2-99AF-4EF5-B386-7990C15C0D53">
+      <dmn:requiredKnowledge href="#_E890B74C-A496-4652-97E2-4448420C2E66"/>
+    </dmn:knowledgeRequirement>
+    <dmn:literalExpression id="_A0BA1CEC-89F4-42E7-BDBA-F82500A0CCCE">
+      <dmn:text>Funcion_StringToLista(medicamentos())</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:textAnnotation id="_65D9175E-C154-40F9-92D1-16B77215FB0E" textFormat="text/plain">
+    <dmn:text>Funcion: convierte de String a lista</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:textAnnotation id="_B970B836-D1B9-4804-853F-992297C88709" textFormat="text/plain">
+    <dmn:text>Llamada de Funciones</dmn:text>
+  </dmn:textAnnotation>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_8077922E-61E5-47BC-B042-DF2389D9402D" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_70D73E80-F100-4B5A-AACA-E7260DE09403">
+            <kie:width>623</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_116C58B7-FE67-4B2D-AA1A-34D3419AE254">
+            <kie:width>50</kie:width>
+            <kie:width>623</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C845B76E-5BA7-4490-91AD-F5CDA4C1606B">
+            <kie:width>587</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_979D6D91-4BB6-4BD9-8937-6B810B0EB58A">
+            <kie:width>150</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_89A863D2-F673-4422-AEAD-1A11222F4D13">
+            <kie:width>50</kie:width>
+            <kie:width>150</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_0F99C046-FDF9-406F-BF59-A5CE2C48429C">
+            <kie:width>150</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_D8472A9C-7C22-45A1-B383-97A1653E9D23">
+            <kie:width>50</kie:width>
+            <kie:width>150</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A0BA1CEC-89F4-42E7-BDBA-F82500A0CCCE">
+            <kie:width>663</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_C6C5C6AB-A63F-46AD-B1B5-04DFBB4C760A" dmnElementRef="_C6C5C6AB-A63F-46AD-B1B5-04DFBB4C760A" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="284" y="199" width="185" height="79"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_BFE8699A-720C-409E-B40B-9ABC6060B903" dmnElementRef="_BFE8699A-720C-409E-B40B-9ABC6060B903" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="591" y="215" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_E890B74C-A496-4652-97E2-4448420C2E66" dmnElementRef="_E890B74C-A496-4652-97E2-4448420C2E66" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="294" y="501" width="137" height="71"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_65649EAA-E5A7-455F-A29A-38F325A0AF1E" dmnElementRef="_65649EAA-E5A7-455F-A29A-38F325A0AF1E" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="303" y="365.3421052631579" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_71453444-43B8-4884-BB60-128DABC4A172" dmnElementRef="_71453444-43B8-4884-BB60-128DABC4A172" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="591" y="441.1913662661326" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_65D9175E-C154-40F9-92D1-16B77215FB0E" dmnElementRef="_65D9175E-C154-40F9-92D1-16B77215FB0E" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="413" y="365" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_B970B836-D1B9-4804-853F-992297C88709" dmnElementRef="_B970B836-D1B9-4804-853F-992297C88709" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="714" y="223" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_84D15737-2990-4394-BAFF-8E0C9B41FE08-AUTO-TARGET" dmnElementRef="_84D15737-2990-4394-BAFF-8E0C9B41FE08">
+        <di:waypoint x="376.5" y="238.5"/>
+        <di:waypoint x="591" y="240"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_598652D2-D9F6-424B-BB68-CC2C0615677E-AUTO-TARGET" dmnElementRef="_598652D2-D9F6-424B-BB68-CC2C0615677E">
+        <di:waypoint x="353" y="390.3421052631579"/>
+        <di:waypoint x="641" y="265"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_6B56BB70-DC25-4F25-A364-D217CB86D7F0" dmnElementRef="_6B56BB70-DC25-4F25-A364-D217CB86D7F0">
+        <di:waypoint x="353" y="390.3421052631579"/>
+        <di:waypoint x="591" y="466.1913662661326"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_3A41FFE2-99AF-4EF5-B386-7990C15C0D53" dmnElementRef="_3A41FFE2-99AF-4EF5-B386-7990C15C0D53">
+        <di:waypoint x="362.5" y="536.5"/>
+        <di:waypoint x="591" y="466.1913662661326"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
