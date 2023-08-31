@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_C24D9DBE-8B13-4E6C-BDB4-4A05D1E0E262" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_C9B2F89D-CFA9-4738-BFFE-43F4BB87B3C4" name="Keralty_HU" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_C24D9DBE-8B13-4E6C-BDB4-4A05D1E0E262">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_C247E6AF-D99B-4B1B-83F6-92B64EF2829F" name="tDatosIniciales" isCollection="false">
+    <dmn:itemComponent id="_444A192B-DF15-4D6D-A713-52F04866249E" name="embarazo" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="enumeration" id="_9901F33D-60AB-4092-B6B7-6B7D3ED07ACC">
+        <dmn:text>"S", "N"</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_40D4F491-81F2-4CBA-8C67-60F703447E8C" name="edad" isCollection="false"/>
+  </dmn:itemDefinition>
+  <dmn:decision id="_FF7992A6-5B40-4677-8D16-5708C1FB28CD" name="Validacion Paciente">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6FCC3E7B-B83F-40D4-8F64-6985C773D2F5" name="Validacion Paciente" typeRef="boolean"/>
+    <dmn:informationRequirement id="_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6">
+      <dmn:requiredInput href="#_5856FBEE-2087-4CD0-AFF2-25CE49714CD1"/>
+    </dmn:informationRequirement>
+    <dmn:literalExpression id="_29B039D7-CD3A-4665-8194-4654F8DB3041">
+      <dmn:text>if datos.embarazo = "N" and datos.edad &gt;= 18 then true else false</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
+  <dmn:inputData id="_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" name="datos">
+    <dmn:extensionElements/>
+    <dmn:variable id="_2DBA1515-07C7-4AF0-BA37-6D658C6F2C61" name="datos" typeRef="tDatosIniciales"/>
+  </dmn:inputData>
+  <dmn:textAnnotation id="_3BAA30FF-E6B5-436C-9026-4E96852D510E" textFormat="text/plain">
+    <dmn:text>Paciente &gt;=18 ; Embarzo == N</dmn:text>
+  </dmn:textAnnotation>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_C6D85A33-1310-4AB9-99E3-1EBE7AD37E1A" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_29B039D7-CD3A-4665-8194-4654F8DB3041">
+            <kie:width>541</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_3BAA30FF-E6B5-436C-9026-4E96852D510E" dmnElementRef="_3BAA30FF-E6B5-436C-9026-4E96852D510E" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="128" y="125" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_FF7992A6-5B40-4677-8D16-5708C1FB28CD" dmnElementRef="_FF7992A6-5B40-4677-8D16-5708C1FB28CD" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="314" y="125" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" dmnElementRef="_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="313" y="233" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6" dmnElementRef="_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6">
+        <di:waypoint x="363" y="258"/>
+        <di:waypoint x="364" y="175"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
