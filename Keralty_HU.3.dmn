@@ -8,7 +8,21 @@
         <dmn:text>"S", "N"</dmn:text>
       </dmn:allowedValues>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_40D4F491-81F2-4CBA-8C67-60F703447E8C" name="edad" isCollection="false"/>
+    <dmn:itemComponent id="_40D4F491-81F2-4CBA-8C67-60F703447E8C" name="edad" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_F1C5538F-B020-4B42-A465-01EB929B9171" name="diagnosticos" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_E3C95ABA-1898-435A-9D12-D80F13E22437" name="medicamentos" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_62AB1440-B7BF-44B4-8884-678B07AEDA40" name="antecedentesMedicosDiagnosticos" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_467AC31E-4B9B-4D5A-86DE-B354D0BFCB37" name="antecedentesMedicamentos" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:decision id="_FF7992A6-5B40-4677-8D16-5708C1FB28CD" name="Validacion Paciente">
     <dmn:extensionElements/>
@@ -17,13 +31,45 @@
       <dmn:requiredInput href="#_5856FBEE-2087-4CD0-AFF2-25CE49714CD1"/>
     </dmn:informationRequirement>
     <dmn:literalExpression id="_29B039D7-CD3A-4665-8194-4654F8DB3041">
-      <dmn:text>if datos.embarazo = "N" and datos.edad &gt;= 18 then true else false</dmn:text>
+      <dmn:text>if DatosIniciales.embarazo = "N" and DatosIniciales.edad &gt;= 18 then true else false</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
-  <dmn:inputData id="_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" name="datos">
+  <dmn:inputData id="_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" name="DatosIniciales">
     <dmn:extensionElements/>
-    <dmn:variable id="_2DBA1515-07C7-4AF0-BA37-6D658C6F2C61" name="datos" typeRef="tDatosIniciales"/>
+    <dmn:variable id="_2DBA1515-07C7-4AF0-BA37-6D658C6F2C61" name="DatosIniciales" typeRef="tDatosIniciales"/>
   </dmn:inputData>
+  <dmn:businessKnowledgeModel id="_F0DDA536-B0D2-49D0-8126-99BB84EC177C" name="Cod_DiagnosticosVerificacion">
+    <dmn:extensionElements/>
+    <dmn:variable id="_0436B0FA-9021-4DBC-BFE2-583CC8F370B7" name="Cod_DiagnosticosVerificacion" typeRef="string"/>
+    <dmn:encapsulatedLogic id="_ACBA02AE-FEFF-47D1-A5B7-E4334730BF3A" kind="FEEL">
+      <dmn:literalExpression id="_2B7C8EAD-2646-4182-B160-7D2782FF0037">
+        <dmn:text>split("I630,I631,I632,I633,I634,I635,I638,I639,I653,I658,I659,I660,I661,I662,I664,I668,
+I669,I672,I693,I698,I500,I509,I518,Y840,I210,I211,I212,I213,I214,I219,I220,I221,
+I228,I229,I230,I231,I232,I233,I234,I235,I238,I240,I250,I251,I252,I702,I708,I709,
+I739,I236,I240,I513,I81X,J960,J96,J969,P285,E271,E273,E274,E283,E310,E894,
+I051,I052,I061,I062,I071,I110,I119,I120,I129,I130,I131,I132,I340,I351,I361,I371,
+I500,I501,I509,I872,J951,J952,J953,J960,J961,J969,K704,K720,K721,K729,N170,
+N171,N172,N178,N179,N180,N188,N189,N19X,N990,O084,O904,P285,P290,
+P960,Q222,Q231,Q233,Z353,Z597,I210,I211,I212,I213,I214,I219,I220,I221,I228,
+I229,I230,I231,I232,I252,I256,P294,I200,I201,I208,I209,I10X,I110,I119,I120,I129,
+I130,I131,I132,I139,I150,I151
+",",")</dmn:text>
+      </dmn:literalExpression>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
+  <dmn:decision id="_CD551D14-57B0-40D0-A4FD-FD0A49330090" name="Validacion_Diagnosticos_AntecedentesMedicos">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B6260E49-EEB5-4C5F-A09E-988AD44103E0" name="Validacion_Diagnosticos_AntecedentesMedicos" typeRef="boolean"/>
+    <dmn:informationRequirement id="_A90F8118-1A05-4B9F-B38F-A155C2EF1AB5">
+      <dmn:requiredInput href="#_5856FBEE-2087-4CD0-AFF2-25CE49714CD1"/>
+    </dmn:informationRequirement>
+    <dmn:knowledgeRequirement id="_B4FE4F11-AD34-4F88-B997-D81E24E2713E">
+      <dmn:requiredKnowledge href="#_F0DDA536-B0D2-49D0-8126-99BB84EC177C"/>
+    </dmn:knowledgeRequirement>
+    <dmn:literalExpression id="_8DBFC214-D181-409B-8628-407AE49B1500">
+      <dmn:text>some i in Cod_DiagnosticosVerificacion() satisfies list contains(DatosIniciales.antecedentesMedicosDiagnosticos, i) or list contains(DatosIniciales.diagnosticos, i)</dmn:text>
+    </dmn:literalExpression>
+  </dmn:decision>
   <dmn:textAnnotation id="_3BAA30FF-E6B5-436C-9026-4E96852D510E" textFormat="text/plain">
     <dmn:text>Paciente &gt;=18 ; Embarzo == N</dmn:text>
   </dmn:textAnnotation>
@@ -34,6 +80,16 @@
           <kie:ComponentWidths dmnElementRef="_29B039D7-CD3A-4665-8194-4654F8DB3041">
             <kie:width>541</kie:width>
           </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_2B7C8EAD-2646-4182-B160-7D2782FF0037">
+            <kie:width>150</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_ACBA02AE-FEFF-47D1-A5B7-E4334730BF3A">
+            <kie:width>50</kie:width>
+            <kie:width>150</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8DBFC214-D181-409B-8628-407AE49B1500">
+            <kie:width>930</kie:width>
+          </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
       <dmndi:DMNShape id="dmnshape-drg-_3BAA30FF-E6B5-436C-9026-4E96852D510E" dmnElementRef="_3BAA30FF-E6B5-436C-9026-4E96852D510E" isCollapsed="false">
@@ -42,7 +98,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="128" y="125" width="100" height="50"/>
+        <dc:Bounds x="136" y="282" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_FF7992A6-5B40-4677-8D16-5708C1FB28CD" dmnElementRef="_FF7992A6-5B40-4677-8D16-5708C1FB28CD" isCollapsed="false">
@@ -51,7 +107,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="314" y="125" width="100" height="50"/>
+        <dc:Bounds x="373" y="160" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" dmnElementRef="_5856FBEE-2087-4CD0-AFF2-25CE49714CD1" isCollapsed="false">
@@ -60,12 +116,38 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="313" y="233" width="100" height="50"/>
+        <dc:Bounds x="372" y="295" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_F0DDA536-B0D2-49D0-8126-99BB84EC177C" dmnElementRef="_F0DDA536-B0D2-49D0-8126-99BB84EC177C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="576.9789719626168" y="295" width="217" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_CD551D14-57B0-40D0-A4FD-FD0A49330090" dmnElementRef="_CD551D14-57B0-40D0-A4FD-FD0A49330090" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="586" y="160" width="201" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6" dmnElementRef="_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6">
-        <di:waypoint x="363" y="258"/>
-        <di:waypoint x="364" y="175"/>
+        <di:waypoint x="422" y="320"/>
+        <di:waypoint x="423" y="210"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_B4FE4F11-AD34-4F88-B997-D81E24E2713E-AUTO-TARGET" dmnElementRef="_B4FE4F11-AD34-4F88-B997-D81E24E2713E">
+        <di:waypoint x="685.4789719626168" y="320"/>
+        <di:waypoint x="686.5" y="210"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_A90F8118-1A05-4B9F-B38F-A155C2EF1AB5-AUTO-TARGET" dmnElementRef="_A90F8118-1A05-4B9F-B38F-A155C2EF1AB5">
+        <di:waypoint x="422" y="320"/>
+        <di:waypoint x="686.5" y="210"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
