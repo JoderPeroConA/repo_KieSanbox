@@ -67,7 +67,7 @@ I130,I131,I132,I139,I150,I151
       <dmn:requiredKnowledge href="#_F0DDA536-B0D2-49D0-8126-99BB84EC177C"/>
     </dmn:knowledgeRequirement>
     <dmn:literalExpression id="_8DBFC214-D181-409B-8628-407AE49B1500">
-      <dmn:text>some i in Cod_DiagnosticosVerificacion() satisfies list contains(DatosIniciales.antecedentesMedicosDiagnosticos, i)</dmn:text>
+      <dmn:text>some i in Cod_Diagnosticoscardiocerebrovasculares() satisfies list contains(DatosIniciales.antecedentesMedicosDiagnosticos, i)</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:businessKnowledgeModel id="_3E24E536-ED83-440D-9E8F-B4D2654605F4" name="Cod_Medicamentos">
@@ -118,7 +118,7 @@ I130,I131,I132,I139,I150,I151
       <dmn:requiredKnowledge href="#_F0DDA536-B0D2-49D0-8126-99BB84EC177C"/>
     </dmn:knowledgeRequirement>
     <dmn:literalExpression id="_F3F95658-2A0D-4DE0-945C-C7B6CE0CFB66">
-      <dmn:text>some i in Cod_DiagnosticosVerificacion() satisfies list contains(DatosIniciales.diagnosticos, i)</dmn:text>
+      <dmn:text>some i in Cod_Diagnosticoscardiocerebrovasculares() satisfies list contains(DatosIniciales.diagnosticos, i)</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
   <dmn:association id="_EA126B7F-A54F-4467-A85E-3259D5810C4C" associationDirection="None">
@@ -143,11 +143,11 @@ I130,I131,I132,I139,I150,I151
             <kie:width>541</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_2B7C8EAD-2646-4182-B160-7D2782FF0037">
-            <kie:width>150</kie:width>
+            <kie:width>705</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_ACBA02AE-FEFF-47D1-A5B7-E4334730BF3A">
             <kie:width>50</kie:width>
-            <kie:width>150</kie:width>
+            <kie:width>705</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_8DBFC214-D181-409B-8628-407AE49B1500">
             <kie:width>930</kie:width>
@@ -201,7 +201,7 @@ I130,I131,I132,I139,I150,I151
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="379.9789719626168" y="426" width="217" height="50"/>
+        <dc:Bounds x="466.9789719626168" y="399" width="217" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_CD551D14-57B0-40D0-A4FD-FD0A49330090" dmnElementRef="_CD551D14-57B0-40D0-A4FD-FD0A49330090" isCollapsed="false">
@@ -273,7 +273,7 @@ I130,I131,I132,I139,I150,I151
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="1366.9657320872275" y="264" width="100" height="50"/>
+        <dc:Bounds x="1315.9657320872275" y="265" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6" dmnElementRef="_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6">
@@ -285,7 +285,7 @@ I130,I131,I132,I139,I150,I151
         <di:waypoint x="489.5" y="314"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_B4FE4F11-AD34-4F88-B997-D81E24E2713E-AUTO-TARGET" dmnElementRef="_B4FE4F11-AD34-4F88-B997-D81E24E2713E">
-        <di:waypoint x="488.4789719626168" y="451"/>
+        <di:waypoint x="575.4789719626168" y="424"/>
         <di:waypoint x="489.5" y="314"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_325EC720-0DA4-4D0A-92D0-60A6AEE33909-AUTO-TARGET" dmnElementRef="_325EC720-0DA4-4D0A-92D0-60A6AEE33909">
@@ -301,7 +301,7 @@ I130,I131,I132,I139,I150,I151
         <di:waypoint x="111" y="290"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_8F35125D-D674-4FC7-80AE-61A2430274C6" dmnElementRef="_8F35125D-D674-4FC7-80AE-61A2430274C6">
-        <di:waypoint x="488.4789719626168" y="451"/>
+        <di:waypoint x="575.4789719626168" y="424"/>
         <di:waypoint x="697.2725420959737" y="312.81711705184864"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3-AUTO-TARGET" dmnElementRef="_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3">
@@ -310,7 +310,7 @@ I130,I131,I132,I139,I150,I151
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_2360C60B-4CB9-4BD8-A06E-C8737AAE7048-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_2360C60B-4CB9-4BD8-A06E-C8737AAE7048">
         <di:waypoint x="1286.9657320872275" y="289"/>
-        <di:waypoint x="1366.9657320872275" y="289"/>
+        <di:waypoint x="1315.9657320872275" y="290"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
