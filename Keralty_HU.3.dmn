@@ -125,8 +125,15 @@ I130,I131,I132,I139,I150,I151
     <dmn:sourceRef href="#_FF7992A6-5B40-4677-8D16-5708C1FB28CD"/>
     <dmn:targetRef href="#_63C75699-EB62-4763-827A-7353DBE52EA7"/>
   </dmn:association>
+  <dmn:association id="_2360C60B-4CB9-4BD8-A06E-C8737AAE7048" associationDirection="None">
+    <dmn:sourceRef href="#_C9C43262-C017-4FAB-A0E4-63967D465ECE"/>
+    <dmn:targetRef href="#_D8378189-77E3-4A6E-8852-1298422504FF"/>
+  </dmn:association>
   <dmn:textAnnotation id="_63C75699-EB62-4763-827A-7353DBE52EA7" textFormat="text/plain">
     <dmn:text>Paciente &gt;=18 ; Embarzo == N</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:textAnnotation id="_D8378189-77E3-4A6E-8852-1298422504FF" textFormat="text/plain">
+    <dmn:text>comentario</dmn:text>
   </dmn:textAnnotation>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_C6D85A33-1310-4AB9-99E3-1EBE7AD37E1A" name="DRG">
@@ -260,6 +267,15 @@ I130,I131,I132,I139,I150,I151
         <dc:Bounds x="616" y="262.81711705184864" width="162.54508419194735" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_D8378189-77E3-4A6E-8852-1298422504FF" dmnElementRef="_D8378189-77E3-4A6E-8852-1298422504FF" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1366.9657320872275" y="264" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6" dmnElementRef="_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6">
         <di:waypoint x="286" y="424"/>
         <di:waypoint x="287" y="314"/>
@@ -291,6 +307,10 @@ I130,I131,I132,I139,I150,I151
       <dmndi:DMNEdge id="dmnedge-drg-_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3-AUTO-TARGET" dmnElementRef="_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3">
         <di:waypoint x="286" y="424"/>
         <di:waypoint x="697.2725420959737" y="312.81711705184864"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_2360C60B-4CB9-4BD8-A06E-C8737AAE7048-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_2360C60B-4CB9-4BD8-A06E-C8737AAE7048">
+        <di:waypoint x="1286.9657320872275" y="289"/>
+        <di:waypoint x="1366.9657320872275" y="289"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
