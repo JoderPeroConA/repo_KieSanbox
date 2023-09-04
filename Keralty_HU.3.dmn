@@ -38,9 +38,9 @@
     <dmn:extensionElements/>
     <dmn:variable id="_2DBA1515-07C7-4AF0-BA37-6D658C6F2C61" name="DatosIniciales" typeRef="tDatosIniciales"/>
   </dmn:inputData>
-  <dmn:businessKnowledgeModel id="_F0DDA536-B0D2-49D0-8126-99BB84EC177C" name="Cod_DiagnosticosVerificacion">
+  <dmn:businessKnowledgeModel id="_F0DDA536-B0D2-49D0-8126-99BB84EC177C" name="Cod_Diagnosticoscardiocerebrovasculares">
     <dmn:extensionElements/>
-    <dmn:variable id="_0436B0FA-9021-4DBC-BFE2-583CC8F370B7" name="Cod_DiagnosticosVerificacion" typeRef="string"/>
+    <dmn:variable id="_0436B0FA-9021-4DBC-BFE2-583CC8F370B7" name="Cod_Diagnosticoscardiocerebrovasculares" typeRef="string"/>
     <dmn:encapsulatedLogic id="_ACBA02AE-FEFF-47D1-A5B7-E4334730BF3A" kind="FEEL">
       <dmn:literalExpression id="_2B7C8EAD-2646-4182-B160-7D2782FF0037">
         <dmn:text>split("I630,I631,I632,I633,I634,I635,I638,I639,I653,I658,I659,I660,I661,I662,I664,I668,
@@ -57,9 +57,9 @@ I130,I131,I132,I139,I150,I151
       </dmn:literalExpression>
     </dmn:encapsulatedLogic>
   </dmn:businessKnowledgeModel>
-  <dmn:decision id="_CD551D14-57B0-40D0-A4FD-FD0A49330090" name="Validacion_AntecedentesMedicos">
+  <dmn:decision id="_CD551D14-57B0-40D0-A4FD-FD0A49330090" name="Validacion_AntecedentesMedicosDiagnosticos">
     <dmn:extensionElements/>
-    <dmn:variable id="_B6260E49-EEB5-4C5F-A09E-988AD44103E0" name="Validacion_AntecedentesMedicos" typeRef="boolean"/>
+    <dmn:variable id="_B6260E49-EEB5-4C5F-A09E-988AD44103E0" name="Validacion_AntecedentesMedicosDiagnosticos" typeRef="boolean"/>
     <dmn:informationRequirement id="_A90F8118-1A05-4B9F-B38F-A155C2EF1AB5">
       <dmn:requiredInput href="#_5856FBEE-2087-4CD0-AFF2-25CE49714CD1"/>
     </dmn:informationRequirement>
@@ -111,6 +111,9 @@ I130,I131,I132,I139,I150,I151
   <dmn:decision id="_4E4BA1EF-4B56-4BFB-8F93-6ABE92F45FB1" name="Validacion_Diagnosticos">
     <dmn:extensionElements/>
     <dmn:variable id="_0C94233E-977F-4FC4-974C-4EF19868B3C5" name="Validacion_Diagnosticos" typeRef="boolean"/>
+    <dmn:informationRequirement id="_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3">
+      <dmn:requiredInput href="#_5856FBEE-2087-4CD0-AFF2-25CE49714CD1"/>
+    </dmn:informationRequirement>
     <dmn:knowledgeRequirement id="_8F35125D-D674-4FC7-80AE-61A2430274C6">
       <dmn:requiredKnowledge href="#_F0DDA536-B0D2-49D0-8126-99BB84EC177C"/>
     </dmn:knowledgeRequirement>
@@ -191,7 +194,7 @@ I130,I131,I132,I139,I150,I151
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="379.9789719626168" y="399" width="217" height="50"/>
+        <dc:Bounds x="379.9789719626168" y="426" width="217" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_CD551D14-57B0-40D0-A4FD-FD0A49330090" dmnElementRef="_CD551D14-57B0-40D0-A4FD-FD0A49330090" isCollapsed="false">
@@ -245,7 +248,7 @@ I130,I131,I132,I139,I150,I151
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="307" y="333" width="100" height="50"/>
+        <dc:Bounds x="111" y="265" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_4E4BA1EF-4B56-4BFB-8F93-6ABE92F45FB1" dmnElementRef="_4E4BA1EF-4B56-4BFB-8F93-6ABE92F45FB1" isCollapsed="false">
@@ -266,7 +269,7 @@ I130,I131,I132,I139,I150,I151
         <di:waypoint x="489.5" y="314"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_B4FE4F11-AD34-4F88-B997-D81E24E2713E-AUTO-TARGET" dmnElementRef="_B4FE4F11-AD34-4F88-B997-D81E24E2713E">
-        <di:waypoint x="488.4789719626168" y="424"/>
+        <di:waypoint x="488.4789719626168" y="451"/>
         <di:waypoint x="489.5" y="314"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_325EC720-0DA4-4D0A-92D0-60A6AEE33909-AUTO-TARGET" dmnElementRef="_325EC720-0DA4-4D0A-92D0-60A6AEE33909">
@@ -279,10 +282,14 @@ I130,I131,I132,I139,I150,I151
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_EA126B7F-A54F-4467-A85E-3259D5810C4C-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_EA126B7F-A54F-4467-A85E-3259D5810C4C">
         <di:waypoint x="337" y="289"/>
-        <di:waypoint x="307" y="358"/>
+        <di:waypoint x="111" y="290"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_8F35125D-D674-4FC7-80AE-61A2430274C6" dmnElementRef="_8F35125D-D674-4FC7-80AE-61A2430274C6">
-        <di:waypoint x="488.4789719626168" y="424"/>
+        <di:waypoint x="488.4789719626168" y="451"/>
+        <di:waypoint x="697.2725420959737" y="312.81711705184864"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3-AUTO-TARGET" dmnElementRef="_E2C58E7D-214F-4F07-8DF6-EDE9964ECBF3">
+        <di:waypoint x="286" y="424"/>
         <di:waypoint x="697.2725420959737" y="312.81711705184864"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
