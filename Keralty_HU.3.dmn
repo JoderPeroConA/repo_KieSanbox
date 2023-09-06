@@ -237,7 +237,7 @@ I130,I131,I132,I139,I150,I151
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="1093" y="399.7777777777778" width="224.44444444444446" height="50"/>
+        <dc:Bounds x="1146" y="398.7777777777778" width="224.44444444444446" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_C9C43262-C017-4FAB-A0E4-63967D465ECE" dmnElementRef="_C9C43262-C017-4FAB-A0E4-63967D465ECE" isCollapsed="false">
@@ -293,7 +293,7 @@ I130,I131,I132,I139,I150,I151
         <di:waypoint x="994.5" y="314.1550143781452"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_0A53AB8C-2E38-453E-A742-6D6BC0C60491-AUTO-TARGET" dmnElementRef="_0A53AB8C-2E38-453E-A742-6D6BC0C60491">
-        <di:waypoint x="1205.2222222222222" y="424.7777777777778"/>
+        <di:waypoint x="1258.2222222222222" y="423.7777777777778"/>
         <di:waypoint x="1207.243509865005" y="314.55555555555554"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_EA126B7F-A54F-4467-A85E-3259D5810C4C-AUTO-SOURCE-AUTO-TARGET" dmnElementRef="_EA126B7F-A54F-4467-A85E-3259D5810C4C">
