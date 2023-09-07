@@ -262,7 +262,10 @@ I130,I131,I132,I139,I150,I151
     <dmn:text>Paciente &gt;=18 ; Embarzo == N</dmn:text>
   </dmn:textAnnotation>
   <dmn:textAnnotation id="_58D495E4-C0E6-422D-B8DD-6E322F3E1EA8" textFormat="text/plain">
-    <dmn:text>Condicion de Enfermedad CardioVascular y Fechas de Examenes</dmn:text>
+    <dmn:text>Condición de Enfermedad Cardiovascular y Fechas de Examenes</dmn:text>
+  </dmn:textAnnotation>
+  <dmn:textAnnotation id="_63FBFEE2-48FE-420F-BE38-2A8F56821740" textFormat="text/plain">
+    <dmn:text>Validación: Elegir que algoritmo Siguiente Ejecutar - HU4. / HU.5</dmn:text>
   </dmn:textAnnotation>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_C6D85A33-1310-4AB9-99E3-1EBE7AD37E1A" name="DRG">
@@ -506,7 +509,16 @@ I130,I131,I132,I139,I150,I151
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="234.49200000000002" y="95.50099999999999" width="190.50799999999998" height="99.247"/>
+        <dc:Bounds x="234.49200000000002" y="95.50099999999999" width="206.48" height="105.902"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_63FBFEE2-48FE-420F-BE38-2A8F56821740" dmnElementRef="_63FBFEE2-48FE-420F-BE38-2A8F56821740" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1570.4675" y="28.13300000000001" width="253.06500000000005" height="125.86699999999999"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6" dmnElementRef="_6FD1BEAD-18D6-443E-9D1E-0CB9FD6905C6">
